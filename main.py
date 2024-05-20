@@ -5,6 +5,10 @@ def choose_file():
     file_path = filedialog.askopenfilename()
     if file_path:
         label.config(text="Вибраний файл: " + file_path)
+        f = open(file_path)
+        textinfile = f.read()
+        rechennya = textinfile.split(".")
+        label.config(text="Речень: " + str(len(rechennya)))
 
 root = tk.Tk()
 root.title("Оберіть файл")
